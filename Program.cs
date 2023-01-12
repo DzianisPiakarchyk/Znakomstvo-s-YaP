@@ -161,3 +161,63 @@
 //     }
 
 // -----------------------------------------------------------------------------------------------------------
+
+//                                                               22.12.2022
+// Первая задача
+
+// Console.Clear();
+// Console.Write("Введите пятизначное число: ");
+// int a = int.Parse(Console.ReadLine()!);
+
+// string num = a.ToString();
+
+// if(num.Length == 5){
+//     if(num[0] == num [4] && num[1] == num[3]){
+//         Console.WriteLine("У вас палиндром! Поздравляем!");
+//     }
+//     else{
+//         Console.WriteLine("Нет, это не палиндром...");
+//     }
+
+// }
+// else{
+//     Console.WriteLine("Введено непятизначное число. Попробуйте ещё раз.");
+// }
+
+// ---------------------------------------------------------------------------------------------------------
+
+
+
+// Вторая задача
+
+// Console.Clear();
+// Console.Write("Введите A-абсциссу: ");
+// int x_A = int.Parse(Console.ReadLine()!);
+// Console.Write("Введите A-ординату: ");
+// int y_A = int.Parse(Console.ReadLine()!);
+// Console.Write("Введите A-аппликату: ");
+// int z_A = int.Parse(Console.ReadLine()!);
+// Console.Write("Введите B-абсциссу: ");
+// int x_B = int.Parse(Console.ReadLine()!);
+// Console.Write("Введите B-ординату: ");
+// int y_B = int.Parse(Console.ReadLine()!);
+// Console.Write("Введите B-аппликату: ");
+// int z_B = int.Parse(Console.ReadLine()!);
+
+// double dist  = Math.Sqrt(Math.Pow(x_A-x_B, 2) + Math.Pow(y_A-y_B, 2) + Math.Pow(z_A-z_B, 2));
+
+// Console.WriteLine($"Искомое расстояние: {dist:f2}.");
+
+// ---------------------------------------------------------------------------------------------------------
+
+
+
+// Третья задача
+
+// Console.Clear();
+// Console.Write("Введите число: ");
+// int num = int.Parse(Console.ReadLine()!);
+
+// for (int i = 1; i <= num; i++){
+//     Console.Write($"{Math.Pow(i, 3)} ");
+// }
