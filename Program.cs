@@ -221,3 +221,72 @@
 // for (int i = 1; i <= num; i++){
 //     Console.Write($"{Math.Pow(i, 3)} ");
 // }
+
+// -----------------------------------------------------------------------------------------------------------
+
+
+//                                                               Семинар 4. 12.01.2023
+
+// Первая задача
+
+
+// Console.Clear();
+// Console.Write("Введите первое число: ");
+// int a = int.Parse(Console.ReadLine()!);
+// Console.Write("Введите второе число: ");
+// int b = int.Parse(Console.ReadLine()!);
+// Console.WriteLine($"{a} в степени {b} есть {Stepen(a, b)}.");
+
+// // --- Метод ---
+
+// int Stepen (int A, int B){
+//     int mult = 1;
+//     if (B == 0) return 1;
+//     for (int i = 1; i <= B; i++){
+//         mult = mult * A;
+//     }
+//     return mult;
+// }
+
+// ---------------------------------------------------------------------------------------------------------
+
+
+// Вторая задача
+
+// Console.Clear();
+// Console.Write("Введите число: ");
+// int a = int.Parse(Console.ReadLine()!);
+// Console.WriteLine($"Сумма цифр {a} есть {DigitSum(a)}.");
+
+// // --- Метод ---
+
+// int DigitSum (int num){
+//     int sum = 0;
+//     while (num > 0){
+//         sum = sum + num % 10;
+//         num = num / 10;
+//     }
+//     return sum;
+// }
+
+
+// ---------------------------------------------------------------------------------------------------------
+
+
+// Третья задача
+
+// Console.Clear();
+// int[] SomeArray = RandomArray(8);
+// Console.WriteLine($"[{String.Join(", " , SomeArray)}]");
+
+// // --- Метод ---
+
+// int[] RandomArray (int arr){
+//     int[] SomeArray = new int[arr];
+//     for (int i = 0; i < arr; i++){
+//         SomeArray[i] = new Random().Next(-10000, 10000);
+//     }
+//     return SomeArray;
+// }
+
+// -----------------------------------------------------------------------------------------------------------
