@@ -289,4 +289,73 @@
 //     return SomeArray;
 // }
 
-// -----------------------------------------------------------------------------------------------------------
+// ------------------------------------------------------------- Семинар 5. 16.01.2023 ----------------------------------------------
+
+
+// ----------------------------------------------------------------- ПЕРВАЯ ЗАДАЧА --------------------------------------------------
+
+// Console.Clear();
+// int[] array = SomeArray(14, 100, 999);
+// Console.WriteLine($"[{String.Join(", ", array)}]");
+// Console.WriteLine($"Количество чётных элементов в массиве равно {EvenElements(array)}.");
+
+
+// ----------------------------------------------------------------- ВТОРАЯ ЗАДАЧА --------------------------------------------------
+
+// Console.Clear();
+// int[] array = SomeArray(8, -9, 9);
+// Console.WriteLine($"[{String.Join(", ", array)}]");
+// Console.WriteLine($"Сумма элементов, стоящих на нечётных индексах, равна {SumOddIndex(array)}.");
+
+
+// ----------------------------------------------------------------- ТРЕТЬЯ ЗАДАЧА --------------------------------------------------
+// Console.Clear();
+// int[] array = SomeArray(7, -9, 10);
+// Console.Write($"[{String.Join(", ", array)}] --> ");
+// int[] halfArray = MultMirrArray(array);
+// Console.WriteLine($"[{String.Join(", ", halfArray)}]");
+
+
+// ----------------------------------------------- Метод произведения зеркальных элементов массива ----------------------------------
+int[] MultMirrArray(int[] list){
+    int[] halfList = new int[(list.Length + 1) / 2];
+    for(int i = 0; i < (list.Length + 1) / 2; i++){
+        if(list.Length % 2 == 0){
+            halfList[i] = list[i] * list[list.Length - 1 - i];
+            }
+        else{
+            halfList[i] = list[i] * list[list.Length - 1 - i];
+            halfList[list.Length / 2] = list[list.Length / 2];
+            }  
+    }
+    return halfList;
+}
+
+// ------------------------------------------------------- Метод суммы на нечётных индексах -----------------------------------------
+int SumOddIndex(int[] list){   
+    int sum = 0;
+    for(int i = 1; i < list.Length; i += 2){
+        sum += list[i];
+    }
+    return sum;
+}
+
+// --------------------------------------------------------- Метод поиска чётного элемента ------------------------------------------
+int EvenElements(int[] list){   
+    int count = 0;
+    foreach(int el in list){
+        if(el % 2 == 0){
+            count++;
+        }
+    } 
+    return count;
+}
+
+// ------------------------------------------------------ Метод генерирования рандомного массива -------------------------------------
+int[] SomeArray(int size, int minValue, int maxValue){
+    int[] res = new int[size];
+    for(int i = 0; i < size; i++){
+        res[i] = new Random().Next(minValue, maxValue + 1);
+    }
+    return res;
+}
