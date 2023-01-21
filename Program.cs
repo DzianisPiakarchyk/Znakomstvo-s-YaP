@@ -359,3 +359,59 @@ int[] SomeArray(int size, int minValue, int maxValue){
     }
     return res;
 }
+
+
+// ------------------------------------------------------------- Семинар 6. 19.01.2023 ----------------------------------------------
+
+// ----------------------------------------------------------------- ПЕРВАЯ ЗАДАЧА --------------------------------------------------
+
+// Console.Clear();
+// Console.Write("Введите числа через пробел: ");
+// int[] numbers = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);
+// Console.WriteLine($"Между прочим, количество ваших положительных чисел есть {PositiveCount(numbers)}.");
+
+// ---------------------------------------------- Метод подсчёта количества положительных чисел ----------------------------------
+int PositiveCount(int[] list){   
+    int count = 0;
+    for(int i = 0; i < list.Length; i++){
+        if(list[i] > 0){
+            count++;
+        }
+    } 
+    return count;
+}
+
+// ----------------------------------------------------------------- ВТОРАЯ ЗАДАЧА --------------------------------------------------
+
+// Console.Clear();
+// Console.Write("Задайте размерность массива (не менее шести, но и большой не нужно): ");
+// int a = int.Parse(Console.ReadLine()!);
+// int[] array = SomeArray(a, 0, 100);
+//     if (a >= 6 && a <= 32){
+//         Console.WriteLine($"[{String.Join(", ", array)}]");
+//         Console.WriteLine();
+//         Console.WriteLine("Отсортированный по возрастанию массив:");
+//         ArrayToMax(array);
+//         Console.WriteLine($"[{String.Join(", ", array)}]");
+//     }
+//     else{
+//         Console.WriteLine();
+//         Console.Write("Размерность, чтобы было нагляднее...");
+//     }
+// Console.WriteLine();
+
+// ------------------------------------------------------- Метод сортировки массива по возрастанию------------------------------------
+void ArrayToMax(int[] list){
+    int[] ListToMax = new int[list.Length];
+    for (int i = 0; i < list.Length - 1; i++){
+        int minPosition = i;
+        for (int j = i + 1; j < list.Length; j++){
+            if(list[j] < list[minPosition]){
+            minPosition = j;
+            }
+        }
+    int temp = list[i];
+    list[i] = list[minPosition];
+    list[minPosition] = temp;
+    }
+}
