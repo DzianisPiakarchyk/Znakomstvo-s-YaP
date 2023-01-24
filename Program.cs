@@ -415,3 +415,122 @@ void ArrayToMax(int[] list){
     list[minPosition] = temp;
     }
 }
+
+// ------------------------------------------------------------- Семинар 7. 23.01.2023 ----------------------------------------------
+
+// ----------------------------------------------------------------- ПЕРВАЯ ЗАДАЧА --------------------------------------------------
+
+// Console.Clear();
+// Console.Write("Введите количество строк: ");
+// int rows = int.Parse(Console.ReadLine()!);
+// Console.Write("Введите количество столбцов: ");
+// int columns = int.Parse(Console.ReadLine()!);
+
+// double[,] array = SomeDoubleRationalArray(rows, columns, -10, 10);
+// PrintDoubleRationalArray(array);
+
+// -------------------------------------------- Метод генерирования рандомного вещественного двумерного массива -------------------------
+double[,] SomeDoubleRationalArray(int m, int n, int minValue, int maxValue){
+    double[,] res = new double[m, n];
+    for (int i = 0; i < m; i++){
+        for (int j = 0; j < n; j++){
+            res[i, j] = new Random().NextDouble() * (maxValue - minValue) + minValue;
+            res[i, j] = Math.Round(res[i, j], 1);
+        }
+    }
+    return res;
+}
+
+// ------------------------------------------------- Метод вывода рандомного вещественного двумерного массива ----------------------------
+
+void PrintDoubleRationalArray(double[,] list){
+    for (int i = 0; i < list.GetLength(0); i++){
+        for (int j = 0; j < list.GetLength(1); j++){
+            Console.Write($"{list[i, j]} ");
+        }
+        Console.WriteLine();
+    }
+}
+
+// ----------------------------------------------------------------- ВТОРАЯ ЗАДАЧА --------------------------------------------------
+
+// Console.Clear();
+// Console.Write("Введите количество строк: ");
+// int rows = int.Parse(Console.ReadLine()!);
+// Console.Write("Введите количество столбцов: ");
+// int columns = int.Parse(Console.ReadLine()!);
+
+// int[,] array = SomeDoubleArray(rows, columns, 0, 9);
+// PrintDoubleArray(array);
+
+// Console.WriteLine("Введите число: ");
+// int a = int.Parse(Console.ReadLine()!);
+
+// if (FindElement(array, a)){
+//     Console.WriteLine("Бинго! Данное число среди элементов массива есть.");
+// }
+// else{
+//     Console.WriteLine("Увы! Данного числа среди элементов массива нет.");
+// }
+
+// --------------------------------------------------------------- Метод поиска числа в массиве ---------------------------------------
+
+bool FindElement(int[,] list, int a){
+    foreach (int el in list){
+        if (el == a){
+            return true;
+        }
+    }
+    return false;
+}
+
+// --------------------------------------------------- Метод генерирования рандомного двумерного массива ------------------------------
+int[,] SomeDoubleArray(int m, int n, int minValue, int maxValue){
+    int[,] res = new int[m, n];
+    for (int i = 0; i < m; i++){
+        for (int j = 0; j < n; j++){
+            res[i, j] = new Random().Next(minValue, maxValue + 1);
+        }
+    }
+    return res;
+}
+
+// ----------------------------------------------------- Метод вывода рандомного двумерного массива ------------------------------------
+
+void PrintDoubleArray(int[,] list){
+    for (int i = 0; i < list.GetLength(0); i++){
+        for (int j = 0; j < list.GetLength(1); j++){
+            Console.Write($"{list[i, j]} ");
+        }
+        Console.WriteLine();
+    }
+}
+
+// ------------------------------------------------------------------- ТРЕТЬЯ ЗАДАЧА ----------------------------------------------------
+
+// Console.Clear();
+// Console.Write("Введите количество строк: ");
+// int rows = int.Parse(Console.ReadLine()!);
+// Console.Write("Введите количество столбцов: ");
+// int columns = int.Parse(Console.ReadLine()!);
+
+// int[,] array = SomeDoubleArray(rows, columns, 0, 4);
+// PrintDoubleArray(array);
+
+// Console.WriteLine();
+// double[] av = ColumnsAverage(array);
+// Console.WriteLine($"[{String.Join(", ", av)}]");
+
+
+// -------------------------------------------------------- Метод среднего арифметического по столбцам -----------------------------------
+double[] ColumnsAverage(int[,] list){
+    double[] average = new double[list.GetLength(1)];
+    double[] sum = new double[list.GetLength(1)];
+    for (int i = 0; i < list.GetLength(0); i++){
+        for (int j = 0; j < list.GetLength(1); j++){
+        sum[j] += list[i, j];
+        average[j] = sum[j] / list.GetLength(0);
+        }
+    }
+    return average;
+}
