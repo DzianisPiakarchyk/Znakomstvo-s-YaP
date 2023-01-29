@@ -535,6 +535,120 @@ double[] ColumnsAverage(int[,] list){
     return average;
 }
 
+// ------------------------------------------------------------- Семинар 8. 26.01.2023 ----------------------------------------------
+
+// ----------------------------------------------------------------- ПЕРВАЯ ЗАДАЧА --------------------------------------------------
+
+// Console.Clear();
+// Console.Write("Введите количество строк: ");
+// int rows = int.Parse(Console.ReadLine()!);
+// Console.Write("Введите количество столбцов: ");
+// int columns = int.Parse(Console.ReadLine()!);
+
+// int[,] array = SomeDoubleArray(rows, columns, 0, 9);
+// PrintDoubleArray(array);
+
+// Console.WriteLine();
+// RowsToMin(array);
+// PrintDoubleArray(array);
+
+
+// ----------------------------------------------- Метод сортировки строк двумерного массива по убыванию ----------------------------
+
+// void RowsToMin(int[,] array){
+//     int[,] rowsToMin = new int[array.GetLength(0), array.GetLength(1)];
+//     for (int i = 0; i < array.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < array.GetLength(1); j++)
+//         {
+//             for (int k = 0; k < array.GetLength(1) - 1; k++)
+//             {
+//                 if (array[i, k] < array[i, k + 1])
+//                 {
+//                     int temp = array[i, k];
+//                     array[i, k] = array[i, k + 1];
+//                     array[i, k + 1] = temp;
+//                 }
+
+//             }
+
+//         }
+
+//     }
+// }
+
+// ----------------------------------------------------------------- ВТОРАЯ ЗАДАЧА --------------------------------------------------
+
+// Console.Clear();
+// Console.Write("Введите количество строк: ");
+// int rows = int.Parse(Console.ReadLine()!);
+// Console.Write("Введите количество столбцов: ");
+// int columns = int.Parse(Console.ReadLine()!);
+
+// int[,] array = SomeDoubleArray(rows, columns, 0, 9);
+// PrintDoubleArray(array);
+
+// Console.WriteLine($"Строка с наименьшей суммой - {RowsSum(array)}.");
+
+// ------------------------------------------------------- Метод суммы элементов каждой строки ---------------------------------------
+
+// int RowsSum(int[,] list){
+//     int row = 0;
+//     int minSum = 0;
+//     for(int i = 0; i < list.GetLength(1); i++){
+//         minSum += array[0,i];
+//     }
+//     for(int i = 1; i < list.GetLength(0); i++){
+//         int sum = 0;
+//         for(int j = 0; j < list.GetLength(1); j++){
+//             sum += array[i,j];
+//         }
+//         if(minSum > sum){
+//             minSum = sum;
+//             row = i;
+//         }
+//     }
+//     return row;
+// }
+
+// ----------------------------------------------------------------- ТРЕТЬЯ ЗАДАЧА --------------------------------------------------
+
+// Console.Clear();
+// Console.Write("Количество строк первой матрицы: ");
+// int rowsA = int.Parse(Console.ReadLine()!);
+// Console.Write("Количество столбцов первой матрицы: ");
+// int columnsA = int.Parse(Console.ReadLine()!);
+// Console.Write("Количество строк второй матрицы: ");
+// int rowsB = int.Parse(Console.ReadLine()!);
+// Console.Write("Количество столбцов второй матрицы: ");
+// int columnsB = int.Parse(Console.ReadLine()!);
+
+// if(columnsA != rowsB){
+//     Console.WriteLine("Нельзя перемножить такие матрицы по определению!");
+//     return;
+// }
+
+// int[,] arrayA = SomeDoubleArray(rowsA, columnsA, -5, 5);
+// int[,] arrayB = SomeDoubleArray(rowsB, columnsB, -5, 5);
+// PrintDoubleArray(arrayA);
+// Console.WriteLine();
+// PrintDoubleArray(arrayB);
+// Console.WriteLine();
+// PrintDoubleArray(MultMatrix(arrayA, arrayB));
+
+// ------------------------------------------------------------- Метод умножения матриц ----------------------------------------------
+
+// int[,] MultMatrix(int[,] arrayA, int[,] arrayB){
+//     int[,] arrayC = new int[arrayA.GetLength(0), arrayB.GetLength(1)];
+//     for(int i = 0; i < arrayA.GetLength(0); i++){
+//         for(int j = 0; j < arrayB.GetLength(1); j++){
+//             for(int k = 0; k < arrayA.GetLength(1); k++){
+//                 arrayC[i,j] += arrayA[i,k] * arrayB[k,j];
+//             }
+//         }
+//     }
+//     return arrayC;
+// }
 
 // ------------------------------------------------------------- Семинар 9. 29.01.2023 ----------------------------------------------
 
