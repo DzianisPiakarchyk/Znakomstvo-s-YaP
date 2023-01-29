@@ -534,3 +534,50 @@ double[] ColumnsAverage(int[,] list){
     }
     return average;
 }
+
+
+// ------------------------------------------------------------- Семинар 9. 29.01.2023 ----------------------------------------------
+
+// ----------------------------------------------------------------- ПЕРВАЯ ЗАДАЧА --------------------------------------------------
+
+// Console.Write("Введите число: ");
+// int N = int.Parse(Console.ReadLine()!);
+// Console.WriteLine(PrintNumbersFromNTo1(N,1));
+
+
+// ---------------------------------------------------- Метод вывода натуральных чисел убывательно ----------------------------------
+string PrintNumbersFromNTo1(int end, int start){
+    if (end == start) return end.ToString();
+    return (end + " " + PrintNumbersFromNTo1(end - 1, start));
+}
+
+// ----------------------------------------------------------------- ВТОРАЯ ЗАДАЧА --------------------------------------------------
+
+// Console.Write("Введите начало: ");
+// int N = int.Parse(Console.ReadLine()!);
+// Console.Write("Введите конец: ");
+// int M = int.Parse(Console.ReadLine()!);
+// Console.WriteLine($"Сумма чисел от {N} до {M} равна {SumNumbersFromNToM(N,M)}.");
+
+// ---------------------------------------------------- Метод подсчёта суммы натуральных чисел --------------------------------------
+int SumNumbersFromNToM(int start, int end){
+    int sum = start;
+    if (start == end) return sum;
+    return sum + SumNumbersFromNToM(start + 1, end);
+}
+
+// ----------------------------------------------------------------- ТРЕТЬЯ ЗАДАЧА --------------------------------------------------
+
+// Console.Write("Введите m: ");
+// int m = int.Parse(Console.ReadLine()!);
+// Console.Write("Введите n: ");
+// int n = int.Parse(Console.ReadLine()!);
+// Console.WriteLine(Akker(m,n));
+
+// ------------------------------------------------------- Метод вычисления функции Аккермана ----------------------------------------
+int Akker(int m,int n){
+    if (m == 0) return n + 1; 
+        if (n == 0) return Akker(m - 1, 1); 
+        return Akker(m - 1, Akker(m, n - 1)); 
+}
+
